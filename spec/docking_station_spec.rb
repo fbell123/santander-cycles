@@ -15,16 +15,16 @@ describe DockingStation do
 		it {expect {subject.release_bike}.to raise_error("No bikes available")}
 
 		describe 'dock is full'
-		bike = Bike.new
+		bike = double(:bike)
 		station = DockingStation.new
 		station.dock(bike)
-		it {expect {station.dock(Bike.new)}.to raise_error("Dock is full") if @bikes}
+		it {expect {station.dock(double(:bike))}.to raise_error("Dock is full") if @bikes}
 
 		describe "Ensure default capacity is 20"
 		it {expect(subject.specified_capacity).to eq(20)}
 
 		describe "Dock will not release broken bike"
-		bike = Bike.new(true)
+		bike = double(:bike)#(true)
 		station = DockingStation.new
 		station.dock(bike)
 		it {expect {station.release_bike}.to raise_error("Bike is broken")}
