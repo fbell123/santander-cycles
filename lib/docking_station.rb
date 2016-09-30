@@ -22,19 +22,11 @@ class DockingStation
 private
 
 	def full?
-		if @bikes.count == 20
-			true
-		else
-			false
-		end
+		@bikes.count == 20 ? (true) : (false)
 	end
 
 	def empty?
-		if @bikes.count == 0
-			true
-		else
-			false
-		end
+		@bikes.count == 0 ? (true) : (false)
 	end
 
 
