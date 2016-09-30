@@ -1,4 +1,4 @@
-require '~/Makers/Projects/week-1/santander-cycles-2/lib/bike'
+require 'bike'
 
 class DockingStation
 
