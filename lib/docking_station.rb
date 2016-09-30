@@ -3,6 +3,8 @@ require './lib/bike'
 
 class DockingStation
 
+	DEFAULT_CAPACITY = 20
+
 	def initialize
 		@bikes = []
 	end
@@ -22,12 +24,11 @@ class DockingStation
 private
 
 	def full?
-		@bikes.count == 20 ? (true) : (false)
+		@bikes.count == DEFAULT_CAPACITY ? (true) : (false)
 	end
 
 	def empty?
 		@bikes.count == 0 ? (true) : (false)
 	end
-
 
 end
