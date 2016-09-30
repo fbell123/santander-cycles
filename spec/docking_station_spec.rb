@@ -23,4 +23,10 @@ describe DockingStation do
 		describe "Ensure default capacity is 20"
 		it {expect(subject.specified_capacity).to eq(20)}
 
+		describe "Dock will not release broken bike"
+		bike = Bike.new(true)
+		station = DockingStation.new
+		station.dock(bike)
+		it {expect {station.release_bike}.to raise_error("Bike is broken")}
+
 end

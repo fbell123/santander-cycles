@@ -13,7 +13,13 @@ class DockingStation
 	attr_reader :bikes, :specified_capacity
 
 	def release_bike
-			fail "No bikes available" if empty?
+			#fail "No bikes available" if empty?
+			if @bikes.empty?
+				fail "No bikes available"
+			elsif (@bikes[0]).broken
+				fail "Bike is broken"
+			end
+
 			@bikes
 	end
 
