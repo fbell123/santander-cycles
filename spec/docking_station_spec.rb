@@ -18,8 +18,13 @@ describe DockingStation do
 		bike = Bike.new
 		station = DockingStation.new
 		station.dock(bike)
-		it {expect {station.dock(Bike.new)}.to raise_error("Dock is full")if @bike}
+		it {expect {station.dock(Bike.new)}.to raise_error("Dock is full") if @bikes}
 
+		# describe 'docking station default vaule is 20'
+		# it expect{(subject.bikes).count}.to eq 20
 
+		it "ensure capacity is 20" do
+			expect(subject.specified_capacity).to eq (20)
+		end
 
 end
